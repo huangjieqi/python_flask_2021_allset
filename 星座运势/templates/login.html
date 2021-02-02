@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Purple_loginform Website Template | Home :: w3layouts</title>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+ <style>
+         .bcred {
+            /*background-color: pink;*/
+            border: 1px solid black;
+            border-radius: 5px;
+             padding: 10px;
+        }
+        .bcred div {
+            margin-bottom: 5px;
+        }
+        body{
+        background: url('/static/good.jpg');
+        font-family: 'Droid Sans', sans-serif;
+        background-repeat: repeat;
+        background-attachment: fixed;
+       
+        }
+    </style>
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- <link href="static/style.css" rel="stylesheet" type="text/css" media="all" /> -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<!-- -->
+<script>var __links = document.querySelectorAll('a');function __linkClick(e) { parent.window.postMessage(this.href, '*');} ;for (var i = 0, l = __links.length; i < l; i++) {if ( __links[i].getAttribute('data-t') == '_blank' ) { __links[i].addEventListener('click', __linkClick, false);}}</script>
+<!-- <script src="js/jquery.min.js"></script> -->
+<!-- <script>$(document).ready(function(c) {
+	$('.alert-close').on('click', function(c){
+		$('.message').fadeOut('slow', function(c){
+	  		$('.message').remove();
+		});
+	});	
+
+	function myFunction(){
+		alert(111)
+	}
+});
+</script> -->
+</head>
+<body>
+	<div class="nav">
+        <nav class="navbar navbar-inverse">
+        <div class="container">
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="/">请注册后登录</a></li>
+            <!--   <li><a href="/tu">图片</a></li>
+              <li><a href="/fang">房价</a></li> -->
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+<!-- contact-form -->	
+
+<!--<div id="nav">-->
+
+    <!--<ul>-->
+
+        <!--<li><a href="#" />注册页面</a></li>-->
+
+        <!--<li><a href="#" />周公解梦</a></li>-->
+
+        <!--<li><a href="#" />详细信息</a></li>-->
+
+        <!--<li><a href="#" />欢迎关注</a></li>-->
+		<!---->
+		<!--<li><a href="#" />欢迎关注</a></li>-->
+
+		<!--<li><a href="#" />我爱你们</a></li>-->
+
+<!--</ul>   -->
+
+<!--</div>-->
+<div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-6 bcred">
+            <form class="form" method="post" action="/login">
+                <div>
+                	账号
+                    <input type="text" class="text" value="" name="username" onfocus="this.value = '';" ><a href="#" class=" icon user"></a>
+                </div>
+                <div>
+                	密码
+                    <input type="password" value=""  name="password" onfocus="this.value = '';"> <a href="#" class="icon lock"></a>
+                </div>
+                <button type="submit" id="login-button" onclick="myFunction()">登录</button>
+                <h4><a href="/register">请先点击这里完成“注册”</a></h4>
+                <div class="flash-message">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</div>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+
+<!-- <div class="message warning">
+<div class="inset">
+	<div class="login-head">
+		<h1>请先注册!</h1>
+		 <div class="alert-close"> </div> 			
+	</div>
+		<form method='POST' action='/login'>
+			<li>
+				<input type="text" class="text" value="" name="username" onfocus="this.value = '';" ><a href="#" class=" icon user"></a>
+			</li>
+				<div class="clear"> </div>
+			<li>
+				<input type="password" value=""  name="password" onfocus="this.value = '';"> <a href="#" class="icon lock"></a>
+			</li>
+			<div class="clear"> </div>
+			<div class="submit">
+				<p><input type="submit" onclick="myFunction()" value="login" >
+				<h4><a href="/register">请先点击这里完成“注册”</a></h4>
+						  <div class="clear">  </div>	
+			</div>
+
+            <div class="flash-message">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</div>
+				
+		</form>
+		</div>					
+	</div>
+	</div>
+	<div class="clear"> </div> -->
+
+
+
+<!--- footer --->
+<div class="footer">
+	<p></p>
+</div>
+<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+</body>
+</html>

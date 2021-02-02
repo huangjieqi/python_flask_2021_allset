@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style type="text/css">
+	body{
+	background: url('/static/good.jpg');
+	font-family: 'Droid Sans', sans-serif;
+	background-repeat: repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
+
+
+</style>
+<br>
+<h2 align="center">{{ the_title }}</h2>
+
+<form method='POST' action='/search4'>
+<table class = "m-auto">
+<p align="center">温馨提示：“类”字不用输哦！</p>
+<tr><td>关键词:</td><td><input name='phrase' type='TEXT' width='100' list="alist"></td></tr>
+<datalist id="alist">
+	<<option>人物</option>
+	<option>动物</option>
+	<option>娱乐</option>
+	<option>宗教</option>
+	<option>山水</option>
+	<option>建筑</option>
+	<option>恐怖</option>
+	<option>情爱</option>
+	<option>植物</option>
+	<option>哺乳</option>
+	<option>昆虫</option>
+	<option>鸟禽</option>
+	<option>活动</option>
+	<option>物品</option>
+	<option>生活</option>
+	<option>疾病</option>
+	<option>自然</option>
+	<option>身体</option>
+	<option>运动</option>
+	<option>食物</option>
+	<option>鬼神</option>
+	<option>冷血</option>
+	<option>鬼怪</option>
+	<option>娱乐</option>
+	<option>运动</option>
+	<option>豆类</option>
+	<option>瓜类</option>
+	<option>果实</option>
+	<option>花草</option>
+	<option>其他</option>
+	<option>神仙</option>
+	<option>动作</option>
+	<option>劳动</option>
+	<option>日常</option>
+	<option>场所</option>
+	<option>自然现象</option>
+	<option>工作学习</option>
+	<option>其它活动</option>
+	<option>医疗疾病</option>
+	<option>其它鬼神</option>
+	<option>灾难罪恶</option>
+	<option>时间节日</option>
+	<option>数字形状</option>
+	<option>颜色气味</option>
+	<option>婚恋情感</option>
+	<option>人物称谓</option>
+	<option>地理环境</option>
+	<option>身体器官</option>
+	<option>感觉表情</option>
+	<option>其它生活</option>
+	<option>衣食住行</option>
+	<option>食品饮料</option>
+	<option>财物宝石</option>
+	<option>服装饰品</option>
+	<option>机械电器</option>
+	<option>交通运输</option>
+	<option>其它物品</option>
+	<option>生活用品</option>
+	<option>文化用品</option>
+	<option>武器化学</option>
+	<option>音乐舞蹈</option>
+</datalist>
+</table>
+<p align="center">一键"查找”，周公为你解答疑惑":</p>
+<p align="center"><input value='快快查询' type='SUBMIT'></p>
+</form>
+<ul class="ui">
+	{% for i in the_data %}
+    {% endfor %}
+</ul>
+
+
+{% endblock %}

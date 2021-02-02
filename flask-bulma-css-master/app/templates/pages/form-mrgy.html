@@ -1,0 +1,83 @@
+
+    {% include 'includes/navigation.html' %}
+
+        <section id="contact" class="section section-light-grey is-medium">
+            <div class="container">
+                <div class="title-wrapper has-text-centered">
+                    <h2 class="title is-2 is-spaced">获取每日格言</h2>
+                    <h3 class="subtitle is-5 is-muted">💕每日一格言💕</h3>
+                    <h3 class="subtitle is-5 is-muted">🛎️有话就要“昊昊”说</h3>
+                    <h3 class="subtitle is-5 is-muted">⏰每日不可贪多，每日只有一格言</h3>
+                                                        
+                                                        
+                    <div class="divider is-centered"></div>
+                </div>
+        
+
+        <div class="content-wrapper">
+                    <div class="columns is-vcentered">
+                        <div class="column is-4">
+                           
+                        </div>
+                        <div class="column is-4">
+                            <figure class="testimonial">
+                                <blockquote id="poem_sentence">
+                                       
+                                    {% if msg %}
+                                        {{ msg | safe }}
+                                    {% else %}
+                                        点击下方生成每日格言
+                                    {% endif %}
+                                </blockquote>
+                                <div class="author">
+                                    <!-- <img class="lazy" data-src="/static/assets/images/illustrations/faces/2.png" alt=""/> -->
+                                    <h5 id="poem_info_1"></h5>
+                            </figure>
+                        </div>
+                        <div class="column is-4">
+
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="content-wrapper">
+                    <div class="columns">
+                        <div class="column is-6 is-offset-3">
+                            <form>
+                                <div class="columns is-multiline">
+                            
+                                    <div class="form-footer has-text-centered mt-10">
+                                        <button type="button" class="button cta is-large primary-btn raised is-clear" onclick="mrgy();">获取每日格言</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+<script type="text/javascript">
+   function mrgy()
+   {
+       $.ajax(
+      {
+         type: "POST",
+         url: "/api_mrgy",
+         dataType: "json",
+         data: {},
+         success: function(res)
+         {
+             console.log(res);
+            $("#poem_sentence").html(msg=res.msg);//注意显示的id
+         },
+         error: function (xhr, status, error) {
+            console.log(error);
+        }
+      });
+   }
+</script>

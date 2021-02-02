@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Purple_loginform Website Template | Home :: w3layouts</title>
+<style type="text/css">
+#nav{
+
+    width: 1200px;
+
+    height: 100px;
+
+    margin: 38px;
+
+}
+
+#nav ul{
+    Width:1000px;     
+
+    height:69px;       
+
+    margin:30px auto;
+
+    padding:0;
+
+    list-style:none;   
+
+}
+#nav ul li{
+
+    float:left;
+	
+	text-align:center;
+	
+
+}
+#nav ul li a{
+
+    width: 98px;
+
+    height: 50px;
+	
+	line-height:28px;/*设置行距为28px，让文字在每行的中间位置*/
+
+    border: 1px solid #c8adc4;
+	
+	margin:30px 30px;
+	
+	display:block;
+
+    text-align: center;
+	
+	text-color: #35333c;
+
+    line-height: 50px;
+
+    text-decoration: none;
+
+
+	
+}
+
+ 
+
+#nav ul li a:hover{
+ 
+    line-height:28px;
+	
+    background-color: #a35c8f;
+
+}
+</style>
+<link href="static/style.css" rel="stylesheet" type="text/css" media="all" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<!-- -->
+<script>var __links = document.querySelectorAll('a');function __linkClick(e) { parent.window.postMessage(this.href, '*');} ;for (var i = 0, l = __links.length; i < l; i++) {if ( __links[i].getAttribute('data-t') == '_blank' ) { __links[i].addEventListener('click', __linkClick, false);}}</script>
+<!-- <script src="js/jquery.min.js"></script> -->
+<!-- <script>$(document).ready(function(c) {
+	$('.alert-close').on('click', function(c){
+		$('.message').fadeOut('slow', function(c){
+	  		$('.message').remove();
+		});
+	});	
+
+	function myFunction(){
+		alert(111)
+	}
+});
+</script> -->
+</head>
+<body>
+<!-- contact-form -->	
+
+<!--<div id="nav">-->
+
+    <!--<ul>-->
+
+        <!--<li><a href="#" />周公解梦</a></li>-->
+
+        <!--<li><a href="#" />周公解梦</a></li>-->
+
+        <!--<li><a href="#" />繁体字转换</a></li>-->
+
+        <!--<li><a href="#" />星座匹配</a></li>-->
+		<!---->
+		<!--<li><a href="#" />详细信息</a></li>-->
+
+		<!--<li><a href="#" />欢迎关注</a></li>-->
+
+<!--</ul>   -->
+
+<!--</div>-->
+
+<div class="message warning">
+<div class="inset">
+	<div class="login-head">
+		<h1>请先注册</h1>
+		 <div class="alert-close"> </div> 			
+	</div>
+		<form method='POST' action='/login'>
+			<li>
+				<input type="text" class="text" value="" name="username" onfocus="this.value = '';" ><a href="#" class=" icon user"></a>
+			</li>
+				<div class="clear"> </div>
+			<li>
+				<input type="password" value=""  name="password" onfocus="this.value = '';"> <a href="#" class="icon lock"></a>
+			</li>
+			<div class="clear"> </div>
+			<div class="submit">
+				<p><input type="submit" onclick="myFunction()" value="注册" >
+				<h4><a href="#">Lost your Password ?</a></h4>
+						  <div class="clear">  </div>	
+			</div>
+
+            <div class="flash-message">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</div>
+				
+		</form>
+		</div>					
+	</div>
+	</div>
+	<div class="clear"> </div>
+
+
+
+<!--- footer --->
+<div class="footer">
+	<p></p>
+</div>
+<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+</body>
+</html>

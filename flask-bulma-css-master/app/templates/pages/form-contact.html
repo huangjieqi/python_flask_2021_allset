@@ -1,0 +1,136 @@
+
+    {% include 'includes/navigation.html' %}
+
+        <section id="contact" class="section section-light-grey is-medium">
+            <div class="container">
+                <div class="title-wrapper has-text-centered">
+                    <h2 class="title is-2 is-spaced">获取每日诗词</h2>
+                    <h3 class="subtitle is-5 is-muted">💕每日一诗词💕</h3>
+                    <h3 class="subtitle is-5 is-muted">🛎️有话就要“昊昊”说</h3>
+                    <h3 class="subtitle is-5 is-muted">⏰“昊说”开始为您服务</h3>
+                                                        
+                                                        
+                    <div class="divider is-centered"></div>
+                </div>
+        
+
+        <div class="content-wrapper">
+                    <div class="columns is-vcentered">
+                        <div class="column is-4">
+                            <figure class="testimonial">
+                                <blockquote id="poem_sentence">
+                                </blockquote>
+                                <div class="author">
+                                    <img class="lazy" data-src="/static/assets/images/illustrations/faces/1.png" alt=""/>
+                                    <h5 id="poem_info"></h5>
+                                </div>
+                            </figure>
+                        </div>
+                        <div class="column is-4">
+                            <figure class="testimonial">
+                                <blockquote id="poem_sentence_1">
+                                    
+                                </blockquote>
+                                <div class="author">
+                                    <img class="lazy" data-src="/static/assets/images/illustrations/faces/2.png" alt=""/>
+                                    <h5 id="poem_info_1"></h5>
+                            </figure>
+                        </div>
+                        <div class="column is-4">
+                            <figure class="testimonial">
+                                <blockquote id="poem_sentence_2">
+                                    
+                                </blockquote>
+                                <div class="author">
+                                    <img class="lazy" data-src="/static/assets/images/illustrations/faces/3.png" alt=""/>
+                                    <h5 id="poem_info_2"></h5>
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="content-wrapper">
+                    <div class="columns">
+                        <div class="column is-6 is-offset-3">
+                            <form>
+                                <div class="columns is-multiline">
+                            
+                                    <div class="form-footer has-text-centered mt-10">
+                                        <button type="button" class="button cta is-large primary-btn raised is-clear" onclick="test_jrsc();">获取每日诗词</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script type="text/javascript">
+  jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author 
+
+    var sentence_1 = document.querySelector("#poem_sentence_1")
+    var info_1 = document.querySelector("#poem_info_1")
+    sentence_1.innerHTML = result.data.content
+    info_1.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author 
+
+    var sentence_2 = document.querySelector("#poem_sentence_2")
+    var info_2 = document.querySelector("#poem_info_2")
+    sentence_2.innerHTML = result.data.content
+    info_2.innerHTML =  '【' + result.data.origin.dynasty + '】' + result.data.origin.author 
+  });
+
+jinrishici.load(function(result) {
+   
+    var sentence_1 = document.querySelector("#poem_sentence_1")
+    var info_1 = document.querySelector("#poem_info_1")
+    sentence_1.innerHTML = result.data.content
+    info_1.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author 
+
+ 
+  });
+
+jinrishici.load(function(result) {
+  
+    var sentence_2 = document.querySelector("#poem_sentence_2")
+    var info_2 = document.querySelector("#poem_info_2")
+    sentence_2.innerHTML = result.data.content
+    info_2.innerHTML =  '【' + result.data.origin.dynasty + '】' + result.data.origin.author 
+  });
+
+
+  // 今日诗词
+function test_jrsc() {
+    // 卡片一
+    jinrishici.load(function(result) {
+    var sentence = document.querySelector("#poem_sentence")
+    var info = document.querySelector("#poem_info")
+    var sentence_1 = document.querySelector("#poem_sentence_1")
+    var info_1 = document.querySelector("#poem_info_1")
+    sentence.innerHTML = result.data.content
+    info.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author  
+  });
+    // 卡片二
+    jinrishici.load(function(result) {
+    var sentence_1 = document.querySelector("#poem_sentence_1")
+    var info_1 = document.querySelector("#poem_info_1")
+    sentence_1.innerHTML = result.data.content
+    info_1.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author 
+  });
+    // 卡片三
+    jinrishici.load(function(result) {
+    var sentence_2 = document.querySelector("#poem_sentence_2")
+    var info_2 = document.querySelector("#poem_info_2")
+    sentence_2.innerHTML = result.data.content
+    info_2.innerHTML = '【' + result.data.origin.dynasty + '】' + result.data.origin.author 
+  });
+}
+</script>

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style type="text/css">
+	body{
+	background: url('/static/good.jpg');
+	font-family: 'Droid Sans', sans-serif;
+	background-repeat: repeat;
+	background-attachment: fixed;
+	
+
+}
+
+
+</style>
+<br>
+<h2 align="center">{{ the_title }}</h2>
+
+<form method='POST' action='/search4'>
+<table class = "m-auto">
+<p align="center">温馨提示：选择比打字更方便</p>
+<tr><td>关键词:</td><td><input name='phrase' type='TEXT' width='100' list="alist"></td></tr>
+<datalist id="alist">
+
+	<option>双鱼座</option>
+	<option>白羊座</option>
+	<option>金牛座</option>
+	<option>双子座</option>
+	<option>巨蟹座</option>
+	<option>狮子座</option>
+	<option>处女座</option>
+	<option>天秤座</option>
+	<option>天蝎座</option>
+	<option>射手座</option>
+	<option>水瓶座</option>
+	
+</datalist>
+</table>
+<p align="center">每日运势，看看今天的星座运势如何吧":</p>
+<p align="center"><input value='快快查询' type='SUBMIT'></p>
+</form>
+<ul class="ui">
+	{% for i in the_data %}
+    {% endfor %}
+</ul>
+
+
+{% endblock %}

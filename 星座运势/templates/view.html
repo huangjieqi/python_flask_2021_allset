@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style type="text/css">
+    body{
+    background: url('/static/good.jpg');
+    font-family: 'Droid Sans', sans-serif;
+    background-repeat: repeat;
+    background-attachment: fixed;
+
+
+
+</style>
+<h2>{{ the_title }}</h2>
+
+<table>
+    <tr><td>星座名称</td><td>{{ name}}</td></tr>
+     <tr><td>日期：</td><td>{{datatime}}</td></tr>
+     <tr><td>综合指数：</td><td>{{all}}</td></tr>
+     <tr><td>速配星座：</td><td>{{QFriend}}</td></tr>
+     <tr><td>幸运色：</td><td>{{color}}</td></tr>
+     <tr><td>幸运数字：</td><td>{{number}}</td></tr>
+     <tr><td>今日概述：</td><td>{{summary}}</td></tr>
+
+</table>
+
+
+{% endblock %}

@@ -1,0 +1,38 @@
+
+{% extends 'base.html' %}
+
+{% block body %}
+<style type="text/css">
+   body{
+        background-image: radial-gradient(879px at 10.4% 22.3%, rgb(255, 235, 238) 0%, rgb(186, 190, 245) 93.6%);
+        font-family: 'Droid Sans', sans-serif;
+        background-repeat: repeat;
+        background-attachment: fixed;
+       
+        }
+    table th {
+        color: #fff
+    }
+    table td {
+        color: #fff
+    }
+</style>
+
+<h2>{{ the_title }}</h2>
+<div style="top: 100px;position:absolute;padding: 30px">
+<table   class="table  table-bordered  table-striped table-danger">
+    <tr>
+        {% for row_title in the_row_titles %}
+            <th>{{row_title}}</th>
+        {% endfor %}
+    </tr>
+    {% for log_row in the_data %}
+        <tr>
+            {% for item in log_row %}
+                <td>{{item}}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

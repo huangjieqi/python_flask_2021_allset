@@ -1,0 +1,108 @@
+
+    {% include 'includes/navigation.html' %}
+
+        <section id="contact" class="section section-light-grey is-medium">
+            <div class="container">
+                <div class="title-wrapper has-text-centered">
+                    <h2 class="title is-2 is-spaced">获取每日格言</h2>
+                    {% if name %}
+                       <h3 class="subtitle is-5 is-muted">亲爱的<b class="title is-4">{{ name | safe }}</b></h3> 
+                    {% else %}
+                        <h3 class="subtitle is-5 is-muted">💕每日天气提醒💕</h3>
+                        <h3 class="subtitle is-5 is-muted">🛎️本模块分为两个模块,默认提醒/定制化提醒</h3>
+                      <li class="subtitle is-10 is-spaced">默认提醒：默认显示广州的天气情况</li>
+                      <li class="subtitle is-10 is-spaced">定制化：根据用户输入的信息生成页面，提供更好的用户体验</li>
+                    {% endif %}
+                    
+
+                    <h3 class="subtitle is-5 is-muted">⏰"昊"说提醒您今天的天气</h3>
+                                                        
+                                                        
+                    <div class="divider is-centered"></div>
+                </div>
+        
+
+
+                <div class="content-wrapper">
+                    <div class="columns">
+                        <div class="column is-6 is-offset-3">
+
+                            <form method="POST" name="form" action="/mrtq" >
+                                <div class="columns is-multiline">
+                                   <div class="column is-6">
+                                        <input class="input is-medium" name="name" type="text" placeholder="请输入你的姓名">
+                                    </div>
+                                    <div class="column is-6">
+                                        <input class="input is-medium" name="sex" type="text" placeholder="请输入你的性别">
+                                    </div>
+                                    <div class="column is-12">
+                                        <input class="textarea" rows="2" name="city" placeholder="请输入你的城市"></input>
+                                    </div>
+                                     
+                                     <div class="form-footer has-text-centered mt-10">
+                                       
+                                    </div>
+                                    <div class="form-footer has-text-centered mt-10">
+                                        <button type="button" class="button cta is-large primary-btn raised is-clear" onclick="mrtq();"
+                                        >获取今日天气</button>
+                                        <input value='定制化天气' type="SUBMIT" class="button cta is-large primary-btn raised is-clear"
+                                        ></input>
+                                    </div>
+                                </div>
+                            </form>
+
+        <div class="content-wrapper">
+                    <div class="columns is-vcentered">
+                       <!--  <div class="column is-2">
+                           
+                        </div> -->
+                        <div class="column is-12">
+                            <figure class="testimonial">
+                                <blockquote id="poem_sentence">
+                                       
+                                    {% if msg %}
+                                        {{ msg | safe }}
+                                    {% else %}
+                                        点击上方生成天气提醒，默认城市为广州
+                                    {% endif %}
+                                </blockquote>
+                                <div class="author">
+                                    <!-- <img class="lazy" data-src="/static/assets/images/illustrations/faces/2.png" alt=""/> -->
+                                    <h5 id="poem_info_1"></h5>
+                            </figure>
+                        </div>
+           <!--              <div class="column is-4">
+
+                                </div> -->
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+<script type="text/javascript">
+   function mrtq()
+   {
+       $.ajax(
+      {
+         type: "POST",
+         url: "/api_weather",
+         dataType: "json",
+         data: {},
+         success: function(res)
+         {  var data = '您所在的城市为' + res['result']["today"]['city'] + ',今天的天气为' + res['result']["today"]['weather'] + ',  温度为' +
+         res['result']["today"]['temperature'] + '，伴有'+res['result']["today"]['wind']+'，天气' +  res['result']["today"]['dressing_index'] + ',' + res['result']["today"]['dressing_advice']
+             console.log(data);
+            $("#poem_sentence").html(msg=data);//注意显示的id
+         },
+         error: function (xhr, status, error) {
+            console.log(error);
+        }
+      });
+   }
+</script>

@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style type="text/css">
+   body{
+        background-image: radial-gradient(879px at 10.4% 22.3%, rgb(255, 235, 238) 0%, rgb(186, 190, 245) 93.6%);
+        font-family: 'Droid Sans', sans-serif;
+        background-repeat: repeat;
+        background-attachment: fixed;
+       
+        }
+    table th {
+        color: #fff
+    }
+    table td {
+        color: #fff
+    }
+    .bcred {
+            /*background-color: pink;*/
+            border: 1px solid black;
+            border-radius: 5px;
+             /*padding: 25px;*/
+             background:linear-gradient(130deg, #ffb6b9 10%, #fae3d9 100%);
+             top: 300px;
+             text-align:center;
+             position
+             box-shadow:1px 0 10px 0 rgb(0 0 0 / 20%);
+             padding: 15px 100px 0
+        }
+        .bcred div {
+            margin-bottom: 10px;
+        }
+        body{
+        background-image: radial-gradient(879px at 10.4% 22.3%, rgb(255, 235, 238) 0%, rgb(186, 190, 245) 93.6%);
+        font-family: 'Droid Sans', sans-serif;
+        background-repeat: repeat;
+        background-attachment: fixed;
+       
+        }
+        .bg-secondary {
+          background-color: #ffb6b9 !important;
+        }
+        .form-horizontal .form-control {
+        background: #f0f0f0;
+        border: none;
+        border-radius: 20px;
+        box-shadow: none;
+       /* padding: 0 20px 0 45px;*/
+        height: 40px;
+        transition: all 0.3s ease 0s;
+
+        }
+
+       
+        .form-horizontal .btn {
+          
+            font-size: 14px;
+            color: black;
+            background: #bbded9;
+            border-radius: 30px;
+            padding: 10px 25px;
+           
+            text-transform: capitalize;
+            transition: all 0.5s ease 0s;
+        }
+</style>
+<h2>{{ the_title }}</h2>
+<div></div>
+
+
+<div class="col-md-offset-3 col-md-6 " style="top: 140px;position:absolute;padding: 20px;left: 350px">
+            <div class="form-horizontal bcred" action="/login" method="post">
+                <h3>查询结果</h4> 
+                <div class="form-group">
+                    男生星座：
+                    <input type="button"  style="display:inline;width:60%;" class="form-control" onfocus="this.value = '';" id="inputEmail3" placeholder="用户名" name="username" value="{{name}}">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="form-group">
+                    女生星座：
+                    <input type="button"  style="display:inline;width:60%;" class="form-control" onfocus="this.value = '';" id="inputEmail3" placeholder="用户名" name="username" value="{{datatime}}">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="form-group">
+                    配对指数：
+                    <input type="button"  style="display:inline;width:60%;" class="form-control" onfocus="this.value = '';" id="inputEmail3" placeholder="用户名" name="username" value="{{all}}">
+                    <i class="fa fa-user"></i>
+                </div>
+                
+                <div class="form-group">
+                    配对比重：
+                    <input type="button"  style="display:inline;width:60%;" class="form-control" onfocus="this.value = '';" id="inputEmail3" placeholder="用户名" name="username" value="{{QFriend}}">
+                    <i class="fa fa-user"></i>
+                </div>
+                 <div class="form-group">
+                    结果描述：
+                    <input type="button"  style="display:inline;width:60%;" class="form-control" onfocus="this.value = '';" id="inputEmail3" placeholder="用户名" name="username" value="{{color}}">
+                    <i class="fa fa-user"></i>
+                </div>
+                 <div class="form-group">
+                    <div class="card">
+                        
+                    <div class="card-body">
+                         <h5 class="card-title">恋爱</h5>
+                        {{number}}
+                      </div>
+                    </div>
+                    <div class="card">
+                        
+                    <div class="card-body">
+                         <h5 class="card-title">注意</h5>
+                        {{summary}}
+                      </div>
+                    </div>
+                   <!--  恋爱：
+                    <span class="button btn-success"></span> -->
+                    <!-- <input type="button"  style="display:inline;width:60%;" class="form-control" onfocus="this.value = '';" id="inputEmail3" placeholder="用户名" name="username" value="{{number}}">
+                    <i class="fa fa-user"></i> -->
+                </div>
+ 
+
+         
+                <div class="form-group">
+                  <!--  <button type="submit"  onclick="myFunction()" >登录</button> -->
+                <h4><a class="btn btn-default" href="/gongneng">点击再次查询</a></h4>
+                    
+                    <span></span>
+                </div> 
+                
+            </div>
+        </div>
+
+
+<!-- <div style="top: 100px;position:absolute;padding: 20px"  >
+<table class=" table  table-bordered  table-striped table-danger" >
+    <tr><td>男生星座：</td><td>{{name}}</td></tr>
+     <tr><td>女生星座：</td><td>{{datatime}}</td></tr>
+     <tr><td>配对指数：</td><td>{{all}}</td></tr>
+     <tr><td>速配星座：</td><td>{{QFriend}}</td></tr>
+     <tr><td>幸运色：</td><td>{{color}}</td></tr>
+     <tr><td>幸运数字：</td><td>{{number}}</td></tr>
+     <tr><td>今日概述：</td><td>{{summary}}</td></tr>
+
+</table>
+
+</div> -->
+{% endblock %}

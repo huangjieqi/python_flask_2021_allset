@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<style type="text/css">
+	body{
+        background-image: radial-gradient(879px at 10.4% 22.3%, rgb(255, 235, 238) 0%, rgb(186, 190, 245) 93.6%);
+        font-family: 'Droid Sans', sans-serif;
+        background-repeat: repeat;
+        background-attachment: fixed;
+       
+        }
+
+</style>
+<br>
+<h2 align="center">{{ the_title }}</h2>
+
+<br><br>
+<br><br>
+<br>
+<form method='POST' action='/jieguo'>
+<table class = "m-auto" >
+<h4 align="center">选择或者输入你们的星座，看看你们的到底合不合适吧</h4>
+<tr><td>男</td><td><input name='men' type='TEXT' width='100' list="alist"></td></tr>
+<datalist id="alist">
+
+	<option>双鱼</option>
+	<option>白羊</option>
+	<option>金牛</option>
+	<option>双子</option>
+	<option>巨蟹</option>
+	<option>狮子</option>
+	<option>处女</option>
+	<option>天秤</option>
+	<option>天蝎</option>
+	<option>射手</option>
+	<option>水瓶</option>
+	
+</datalist>
+</table>
+<p align="center"></p>
+
+<table class = "m-auto">
+<tr><td>女</td><td><input name='women' type='TEXT' width='100' list="alist"></td></tr>
+<datalist id="alist">
+
+	<option>双鱼</option>
+	<option>白羊</option>
+	<option>金牛</option>
+	<option>双子</option>
+	<option>巨蟹</option>
+	<option>狮子</option>
+	<option>处女</option>
+	<option>天秤</option>
+	<option>天蝎</option>
+	<option>射手</option>
+	<option>水瓶</option>
+	
+</datalist>
+</table>
+<br>
+<h4 align="center">快来看看你的TA到底是不是你的菜</h4>
+<p align="center"><input value='马上匹配' type='SUBMIT' ></p>
+</form>
+<ul class="ui">
+	{% for i in the_data %}
+    {% endfor %}
+</ul>
+
+
+{% endblock %}
